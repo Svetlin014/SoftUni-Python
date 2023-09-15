@@ -1,0 +1,33 @@
+climbers_groups = int(input())
+
+first_group = 0
+second_group = 0
+third_group = 0
+fourth_group = 0
+fifth_group = 0
+
+for people in range(climbers_groups):
+    people_in_group = int(input())
+    if people_in_group <= 5:
+        first_group += people_in_group
+    elif 5 < people_in_group <= 12:
+        second_group += people_in_group
+    elif 12 < people_in_group <= 25:
+        third_group += people_in_group
+    elif 25 < people_in_group <= 40:
+        fourth_group += people_in_group
+    else:
+        fifth_group += people_in_group
+
+total_people = first_group + second_group + third_group + fourth_group + fifth_group
+first_group_percentage = first_group / total_people * 100
+second_group_percentage = second_group / total_people * 100
+third_group_percentage = third_group / total_people * 100
+fourth_group_percentage = fourth_group / total_people * 100
+fifth_group_percentage = fifth_group / total_people * 100
+
+print(f'{first_group_percentage:.2f}%')
+print(f'{second_group_percentage:.2f}%')
+print(f'{third_group_percentage:.2f}%')
+print(f'{fourth_group_percentage:.2f}%')
+print(f'{fifth_group_percentage:.2f}%')
