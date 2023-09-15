@@ -1,0 +1,9 @@
+metres_greening = float(input())
+price_meter = 7.61
+
+total_price = metres_greening * price_meter
+discount = total_price * 0.18
+final_price = total_price - discount
+
+print(f'The final price is {final_price} lv.')
+print(f'The discount is {discount} lv.')
