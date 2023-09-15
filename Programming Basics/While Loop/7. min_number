@@ -1,0 +1,12 @@
+number = int(input())
+min_number = number
+
+while True:
+    user_input = input()
+    if user_input == "Stop":
+        break
+    new_number = int(user_input)
+    if new_number < min_number:
+        min_number = new_number
+
+print(min_number)
