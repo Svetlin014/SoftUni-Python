@@ -1,0 +1,16 @@
+import math
+current_record = float(input())
+distance = float(input())
+time_per_meter = float(input())
+
+record_attempt_time = distance * time_per_meter
+record_attempt_time_with_delay = math.floor(distance / 15)
+time_for_15_metres = record_attempt_time_with_delay * 12.5
+final_time = time_for_15_metres + record_attempt_time
+
+difference = abs(final_time - current_record)
+
+if final_time >= current_record:
+    print(f'No, he failed! He was {difference:.2f} seconds slower.')
+else:
+    print(f'Yes, he succeeded! The new world record is {final_time:.2f} seconds.')
