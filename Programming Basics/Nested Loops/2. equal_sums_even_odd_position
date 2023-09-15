@@ -1,0 +1,14 @@
+first_number = int(input())
+second_number = int(input())
+
+for i in range(first_number, second_number + 1):
+    number = str(i)
+    even_position_sum = 0
+    odd_position_sum = 0
+    for index, digit in enumerate(number):
+        if index % 2 == 0:
+            even_position_sum += int(digit)
+        else:
+            odd_position_sum += int(digit)
+    if even_position_sum == odd_position_sum:
+        print(number, end=" ")
