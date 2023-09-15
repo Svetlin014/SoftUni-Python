@@ -1,0 +1,8 @@
+yearly_price = int(input())
+shoes = yearly_price * 0.60
+equipment = shoes * 0.80
+ball = equipment * 0.25
+accessories = ball * 0.20
+
+total_price = yearly_price + shoes + equipment + ball + accessories
+print(total_price)
