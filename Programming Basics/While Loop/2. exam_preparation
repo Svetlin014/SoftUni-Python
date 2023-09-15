@@ -1,0 +1,23 @@
+failed_threshold = int(input())
+failed_grades = 0
+problems_solved = 0
+total_grades_sum = 0
+current_problem = ""
+
+while True:
+    task_name = input()
+    if task_name == "Enough":
+        print(f'Average score: {average_score:.2f}')
+        print(f'Number of problems: {problems_solved}')
+        print(f'Last problem: {current_problem}')
+        break
+    current_grade = int(input())
+    if current_grade <= 4:
+        failed_grades += 1
+        if failed_grades >= failed_threshold:
+            print(f'You need a break, {failed_grades} poor grades.')
+            break
+    problems_solved += 1
+    total_grades_sum += current_grade
+    current_problem = task_name
+    average_score = total_grades_sum / problems_solved
