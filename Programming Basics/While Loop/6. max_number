@@ -1,0 +1,12 @@
+number = int(input())
+max_number = number
+
+while True:
+    user_input = input()
+    if user_input == "Stop":
+        break
+    new_number = int(user_input)
+    if new_number > max_number:
+        max_number = new_number
+
+print(max_number)
