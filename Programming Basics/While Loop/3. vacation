@@ -1,0 +1,27 @@
+needed_money = float(input())
+available_money = float(input())
+days_passed = 0
+spending_days_counter = 0
+
+while available_money < needed_money:
+    action = input()
+    current_day_sum = float(input())
+    days_passed += 1
+    if action == "spend":
+        spending_days_counter += 1
+        if spending_days_counter >= 5:
+            break
+        available_money -= current_day_sum
+        if available_money < 0:
+            available_money = 0
+    elif action == "save":
+        spending_days_counter = 0
+        available_money += current_day_sum
+        if available_money >= needed_money:
+            break
+
+if available_money >= needed_money:
+    print(f'You saved the money for {days_passed} days.')
+if spending_days_counter >= 5:
+    print(f"You can't save the money.")
+    print(days_passed)
