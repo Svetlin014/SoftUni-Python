@@ -1,0 +1,9 @@
+packages_dog = int(input())
+packages_cat = int(input())
+
+package_price_dog = 2.50
+package_price_cat = 4
+
+final_sum = packages_cat * package_price_cat + packages_dog * package_price_dog
+
+print(f'{final_sum} lv.')
