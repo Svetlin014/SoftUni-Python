@@ -1,0 +1,23 @@
+import math
+tournaments = int(input())
+starting_points = int(input())
+
+final_points = starting_points
+tournament_wins = 0
+
+for wins in range(tournaments):
+    reached_stage = input()
+    if reached_stage == "W":
+        final_points += 2000
+        tournament_wins += 1
+    elif reached_stage == "F":
+        final_points += 1200
+    elif reached_stage == "SF":
+        final_points += 720
+
+average_points_per_tournament = (final_points - starting_points) / tournaments
+tournaments_win_percentage = tournament_wins / tournaments * 100
+
+print(f'Final points: {final_points}')
+print(f'Average points: {math.floor(average_points_per_tournament)}')
+print(f'{tournaments_win_percentage:.2f}%')
