@@ -7,13 +7,10 @@ capacity = rows_count * columns_count
 
 if projection == "Premiere":
     price = 12
-    total_sum = capacity * price
-    print(f'{total_sum:.2f}')
 elif projection == "Normal":
     price = 7.50
-    total_sum = capacity * price
-    print(f'{total_sum:.2f}')
 elif projection == "Discount":
     price = 5.00
-    total_sum = capacity * price
-    print(f'{total_sum:.2f}')
+
+total_sum = capacity * price
+print(f'{total_sum:.2f}')
