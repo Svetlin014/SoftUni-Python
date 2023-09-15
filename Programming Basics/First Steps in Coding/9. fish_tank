@@ -1,0 +1,10 @@
+length_centimeters = int(input())
+width_centimeters = int(input())
+height_centimeters = int(input())
+taken_percent = int(input())
+
+tank_area = length_centimeters * width_centimeters * height_centimeters
+area_litres = tank_area / 1000
+taken_area = 0.17
+litres_needed = area_litres * 0.83
+print(litres_needed)
