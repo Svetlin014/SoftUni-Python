@@ -1,0 +1,18 @@
+budget = float(input())
+statisticians_count = int(input())
+clothing_price_per_statistician = float(input())
+
+decoration_price = budget * 0.10
+clothing_price = clothing_price_per_statistician * statisticians_count
+
+if statisticians_count > 150:
+    clothing_price = clothing_price * 0.90
+
+remaining_funds = budget - decoration_price - clothing_price
+
+if remaining_funds >= 0:
+    print(f'Action!')
+    print(f'Wingard starts filming with {remaining_funds:.2f} leva left.')
+else:
+    print(f'Not enough money!')
+    print(f'Wingard needs {abs(remaining_funds):.2f} leva more.')
