@@ -1,0 +1,29 @@
+group_budget = int(input())
+season = input()
+fishers_count = int(input())
+rent_price = 0
+price_with_additional_discount = 0
+
+if season == "Spring":
+    rent_price = 3000
+elif season == "Summer" or season == "Autumn":
+    rent_price = 4200
+elif season == "Winter":
+    rent_price = 2600
+
+if fishers_count <= 6:
+    rent_price *= 0.90
+elif 7 <= fishers_count <= 11:
+    rent_price *= 0.85
+elif fishers_count >= 12:
+    rent_price *= 0.75
+
+if fishers_count % 2 == 0 and season != "Autumn":
+    rent_price *= 0.95
+
+remaining_budget = group_budget - rent_price
+
+if remaining_budget >= 0:
+    print(f'Yes! You have {remaining_budget:.2f} leva left.')
+else:
+    print(f'Not enough money! You need {abs(remaining_budget):.2f} leva.')
