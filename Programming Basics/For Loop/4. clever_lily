@@ -1,0 +1,22 @@
+age = int(input())
+laundry_price = float(input())
+single_toy_price = int(input())
+
+toys_count = 0
+birthday_money = 0
+total_money = 0
+
+for birthday in range(1, age + 1):
+    if birthday % 2 == 0:
+        birthday_money += 10
+        total_money += birthday_money - 1
+    else:
+        toys_count += 1
+
+total_money += single_toy_price * toys_count
+left_money = total_money - laundry_price
+
+if total_money >= laundry_price:
+    print(f'Yes! {left_money:.2f}')
+else:
+    print(f'No! {abs(left_money):.2f}')
