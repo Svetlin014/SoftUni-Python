@@ -1,0 +1,4 @@
+for number_x in range(1, 11):
+    for number_y in range(1, 11):
+        result = number_x * number_y
+        print(f'{number_x} * {number_y} = {result}')
