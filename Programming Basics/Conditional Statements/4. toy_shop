@@ -1,0 +1,20 @@
+vacation_price = float(input())
+puzzles_count = int(input())
+speaking_toys_count = int(input())
+teddy_bears_count = int(input())
+minions_count = int(input())
+trucks_count = int(input())
+
+total_sum = puzzles_count * 2.60 + speaking_toys_count * 3 + teddy_bears_count * 4.10 + minions_count * 8.20 + trucks_count * 2
+total_count = puzzles_count + speaking_toys_count + teddy_bears_count + minions_count + trucks_count
+if total_count >= 50:
+    total_sum *= 0.75
+
+rent_price = total_sum * 0.10
+
+remaining_funds = total_sum - rent_price - vacation_price
+
+if remaining_funds >= 0:
+    print(f'Yes! {remaining_funds:.2f} lv left.')
+else:
+    print(f'Not enough money! {abs(remaining_funds):.2f} lv needed.')
