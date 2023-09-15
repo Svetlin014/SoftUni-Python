@@ -1,0 +1,14 @@
+total_saved_money = 0
+
+while True:
+    city = input()
+    if city == "End":
+        break
+    needed_money = float(input())
+    total_saved_money = 0
+    while True:
+        current_saved_money = float(input())
+        total_saved_money += current_saved_money
+        if total_saved_money >= needed_money:
+            print(f'Going to {city}!')
+            break
