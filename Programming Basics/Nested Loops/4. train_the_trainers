@@ -1,0 +1,19 @@
+number_of_jury_people = int(input())
+final_grade = 0
+number_of_presentations = 0
+command = input()
+
+while command != "Finish":
+    current_presentation = command
+    number_of_presentations += 1
+    current_presentation_grades_sum = 0
+    for i in range(number_of_jury_people):
+        current_grade = float(input())
+        current_presentation_grades_sum += current_grade
+    average_grade = current_presentation_grades_sum / number_of_jury_people
+    print(f'{current_presentation} - {average_grade:.2f}.')
+    final_grade += average_grade
+    command = input()
+
+final_average_grade = final_grade / number_of_presentations
+print(f"Student's final assessment is {final_average_grade:.2f}.")
