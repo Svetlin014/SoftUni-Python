@@ -1,0 +1,14 @@
+current_sum = 0
+
+while True:
+    user_input = input()
+    if user_input == "NoMoreMoney":
+        break
+    monthly_income = float(user_input)
+    if monthly_income < 0:
+        print(f'Invalid operation!')
+        break
+    current_sum += monthly_income
+    print(f'Increase: {monthly_income:.2f}')
+
+print(f'Total: {current_sum:.2f}')
