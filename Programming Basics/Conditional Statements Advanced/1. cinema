@@ -4,7 +4,6 @@ columns_count = int(input())
 price = 0
 capacity = rows_count * columns_count
 
-
 if projection == "Premiere":
     price = 12
 elif projection == "Normal":
