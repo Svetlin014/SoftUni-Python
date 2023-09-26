@@ -1,0 +1,32 @@
+goods_rides = int(input())
+
+price_per_tone = 0
+microbus_tones = 0
+truck_tones = 0
+train_tones = 0
+microbus_price_per_tone = 0
+train_price_per_tone = 0
+truck_price_per_tone = 0
+
+for rides in range(goods_rides):
+    goods_weight_in_tones = int(input())
+    if goods_weight_in_tones <= 3:
+        microbus_price_per_tone = 200
+        microbus_tones += goods_weight_in_tones
+    elif 4 <= goods_weight_in_tones <= 11:
+        truck_price_per_tone = 175
+        truck_tones += goods_weight_in_tones
+    else:
+        train_price_per_tone = 120
+        train_tones += goods_weight_in_tones
+
+total_tones = microbus_tones + train_tones + truck_tones
+average_price_per_tone = (microbus_tones * microbus_price_per_tone + truck_tones * truck_price_per_tone + train_tones * train_price_per_tone) / total_tones
+microbus_tones_percentage = microbus_tones / total_tones * 100
+truck_tones_percentage = truck_tones / total_tones * 100
+train_tones_percentage = train_tones / total_tones * 100
+
+print(f'{average_price_per_tone:.2f}')
+print(f'{microbus_tones_percentage:.2f}%')
+print(f'{truck_tones_percentage:.2f}%')
+print(f'{train_tones_percentage:.2f}%')
