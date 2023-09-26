@@ -1,0 +1,21 @@
+inherited_money = float(input())
+age_of_death = int(input())
+
+age = 18
+even_years_spent_money = 0
+odd_years_spent_money = 0
+
+for life in range(1800, age_of_death + 1):
+    if age % 2 == 0:
+        even_years_spent_money += 12000
+    else:
+        odd_years_spent_money += 12000 + (50 * age)
+    age += 1
+
+total_spent_money = even_years_spent_money + odd_years_spent_money
+difference = inherited_money - total_spent_money
+
+if difference >= 0:
+    print(f'Yes! He will live a carefree life and will have {difference:.2f} dollars left.')
+else:
+    print(f'He will need {abs(difference):.2f} dollars to survive.')
