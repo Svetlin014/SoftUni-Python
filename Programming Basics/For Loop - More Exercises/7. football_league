@@ -1,0 +1,30 @@
+stadium_capacity = int(input())
+fans_count = int(input())
+
+first_sector = 0
+second_sector = 0
+third_sector = 0
+fourth_sector = 0
+
+for attendance in range(fans_count):
+    sector = input()
+    if sector == "A":
+        first_sector += 1
+    elif sector == "B":
+        second_sector += 1
+    elif sector == "V":
+        third_sector += 1
+    elif sector == "G":
+        fourth_sector += 1
+
+first_sector_percentage = first_sector / fans_count * 100
+second_sector_percentage = second_sector / fans_count * 100
+third_sector_percentage = third_sector / fans_count * 100
+fourth_sector_percentage = fourth_sector / fans_count * 100
+attendance_percentage = fans_count / stadium_capacity * 100
+
+print(f'{first_sector_percentage:.2f}%')
+print(f'{second_sector_percentage:.2f}%')
+print(f'{third_sector_percentage:.2f}%')
+print(f'{fourth_sector_percentage:.2f}%')
+print(f'{attendance_percentage:.2f}%')
