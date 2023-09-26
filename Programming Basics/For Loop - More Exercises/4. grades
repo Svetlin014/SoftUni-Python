@@ -1,0 +1,32 @@
+students_count = int(input())
+
+top_group_students = 0
+second_group_students = 0
+third_group_students = 0
+failed_students = 0
+total_grades_score = 0
+
+for grade in range(students_count):
+    student_grade = float(input())
+    total_grades_score += student_grade
+    if student_grade >= 5.00:
+        top_group_students += 1
+    elif 4 <= student_grade < 5:
+        second_group_students += 1
+    elif 3 <= student_grade < 4:
+        third_group_students += 1
+    elif student_grade < 3:
+        failed_students += 1
+
+total_grades = top_group_students + second_group_students + third_group_students + failed_students
+average_student_grade = total_grades_score / total_grades
+top_group_percentage = top_group_students / total_grades * 100
+second_group_percentage = second_group_students / total_grades * 100
+third_group_percentage = third_group_students / total_grades * 100
+failed_group_percentage = failed_students / total_grades * 100
+
+print(f'Top students: {top_group_percentage:.2f}%')
+print(f'Between 4.00 and 4.99: {second_group_percentage:.2f}%')
+print(f'Between 3.00 and 3.99: {third_group_percentage:.2f}%')
+print(f'Fail: {failed_group_percentage:.2f}%')
+print(f'Average: {average_student_grade:.2f}')
