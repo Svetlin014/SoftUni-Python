@@ -1,0 +1,16 @@
+number_of_pairs = int(input())
+first_sum = int(input()) + int(input())
+max_difference = 0
+
+for pair in range(number_of_pairs - 1):
+    current_sum = int(input()) + int(input())
+    current_difference = abs(current_sum - first_sum)
+    if current_difference > max_difference:
+        max_difference = current_difference
+
+    first_sum = current_sum
+
+if max_difference == 0:
+    print(f'Yes, value={first_sum}')
+else:
+    print(f'No, maxdiff={max_difference}')
