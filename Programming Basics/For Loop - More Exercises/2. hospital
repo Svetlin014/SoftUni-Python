@@ -1,0 +1,17 @@
+days = int(input())
+treated_patients = 0
+untreated_patients = 0
+starting_doctors = 7
+
+for current_day in range(1, days + 1):
+    if current_day % 3 == 0 and untreated_patients > treated_patients:
+        starting_doctors += 1
+    current_day_patients = int(input())
+    if current_day_patients > starting_doctors:
+        treated_patients += starting_doctors
+        untreated_patients += current_day_patients - starting_doctors
+    else:
+        treated_patients += current_day_patients
+
+print(f'Treated patients: {treated_patients}.')
+print(f'Untreated patients: {untreated_patients}.')
