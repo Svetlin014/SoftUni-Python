@@ -1,0 +1,25 @@
+months = int(input())
+
+final_electricity_bill = 0
+final_water_bill = 0
+final_internet_bill = 0
+final_others_bill = 0
+
+
+for period in range(months):
+    gas_bill = float(input())
+    final_electricity_bill += gas_bill
+    water_bill = 20
+    final_water_bill += water_bill
+    internet_bill = 15
+    final_internet_bill += 15
+    others_bill = (gas_bill + water_bill + internet_bill) * 1.20
+    final_others_bill += others_bill
+
+average_monthly_bill = (final_electricity_bill + final_others_bill + final_internet_bill + final_water_bill) / months
+
+print(f'Electricity: {final_electricity_bill:.2f} lv')
+print(f'Water: {final_water_bill:.2f} lv')
+print(f'Internet: {final_internet_bill:.2f} lv')
+print(f'Other: {final_others_bill:.2f} lv')
+print(f'Average: {average_monthly_bill:.2f} lv')
