@@ -1,0 +1,47 @@
+total_moves = int(input())
+
+score = 0
+first_group = 0
+second_group = 0
+third_group = 0
+fourth_group = 0
+fifth_group = 0
+invalid_numbers = 0
+total_numbers = 0
+
+for move in range(total_moves):
+    number = int(input())
+    if 40 <= number <= 50:
+        score += 100
+        fifth_group += 1
+    elif 30 <= number < 40:
+        score += 50
+        fourth_group += 1
+    elif 20 <= number < 30:
+        score += 0.40 * number
+        third_group += 1
+    elif 10 <= number < 20:
+        score += 0.30 * number
+        second_group += 1
+    elif 0 <= number < 10:
+        score += 0.20 * number
+        first_group += 1
+    elif number < 0 or number > 50:
+        invalid_numbers += 1
+        score /= 2
+    total_numbers += 1
+
+first_group_percentage = first_group / total_numbers * 100
+second_group_percentage = second_group / total_numbers * 100
+third_group_percentage = third_group / total_numbers * 100
+fourth_group_percentage = fourth_group / total_numbers * 100
+fifth_group_percentage = fifth_group / total_numbers * 100
+invalid_group_percentage = invalid_numbers / total_numbers * 100
+
+print(f'{score:.2f}')
+print(f'From 0 to 9: {first_group_percentage:.2f}%')
+print(f'From 10 to 19: {second_group_percentage:.2f}%')
+print(f'From 20 to 29: {third_group_percentage:.2f}%')
+print(f'From 30 to 39: {fourth_group_percentage:.2f}%')
+print(f'From 40 to 50: {fifth_group_percentage:.2f}%')
+print(f'Invalid numbers: {invalid_group_percentage:.2f}%')
