@@ -1,0 +1,45 @@
+expected_total_sum = int(input())
+
+product_count = 1
+total_product_value_cash = 0
+total_product_value_credit_card = 0
+expected_total_sum_reached = False
+total_payments_with_cash = 0
+total_payments_with_card = 0
+
+while True:
+    command = input()
+    if command == "End":
+        break
+    product_price = int(command)
+    if product_count % 2 == 0:
+        if product_price < 10:
+            print(f'Error in transaction!')
+        else:
+            print(f'Product sold!')
+            total_product_value_credit_card += product_price
+            total_payments_with_card += 1
+            total_product_value = total_product_value_credit_card + total_product_value_cash
+            average_payment_with_card = total_product_value_credit_card / total_payments_with_card
+            if total_product_value >= expected_total_sum:
+                expected_total_sum_reached = True
+                break
+    else:
+        if product_price > 100:
+            print(f'Error in transaction!')
+        else:
+            print(f'Product sold!')
+            total_product_value_cash += product_price
+            total_payments_with_cash += 1
+            total_product_value = total_product_value_credit_card + total_product_value_cash
+            average_payment_with_cash = total_product_value_cash / total_payments_with_cash
+            if total_product_value >= expected_total_sum:
+                expected_total_sum_reached = True
+                break
+    product_count += 1
+
+if expected_total_sum_reached:
+    print(f'Average CS: {average_payment_with_cash:.2f}')
+    print(f'Average CC: {average_payment_with_card:.2f}')
+else:
+    print(f'Failed to collect required money for charity.')
