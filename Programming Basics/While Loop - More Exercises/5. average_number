@@ -1,0 +1,9 @@
+n = int(input())
+total_sum = 0
+
+for number in range(n):
+    current_number = int(input())
+    total_sum += current_number
+    average_number = total_sum / n
+
+print(f'{average_number:.2f}')
