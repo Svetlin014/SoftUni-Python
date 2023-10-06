@@ -1,16 +1,25 @@
-letter = input()
+command = input()
+c_counter = 0
+o_counter = 0
+n_counter = 0
+word = ""
+while command != "End":
+    if command.isalpha():
+        if command == "c" and c_counter == 0:
+            c_counter += 1
+        elif command == "o" and o_counter == 0:
+            o_counter += 1
+        elif command == "n" and n_counter == 0:
+            n_counter += 1
+        else:
+            word += command
 
-complete_word, skip_letters_count, guess_word = "",  "",  ""
-while letter != "End":
-    if letter in "con":
-        skip_letters_count += letter
-    elif letter.islower() or letter.isupper():
-        guess_word += letter
-    if "c" in skip_letters_count and "o" in skip_letters_count and "n" in skip_letters_count:
-        complete_word += f"{guess_word} "
-        guess_word, skip_letters_count = "", ""
-    if skip_letters_count.count(letter) > 1:
-        guess_word += letter
-    letter = input()
-
-print(complete_word)
+        if c_counter == 1 and o_counter == 1 and n_counter == 1:
+            print(word, end=" ")
+            c_counter = 0
+            o_counter = 0
+            n_counter = 0
+            word = ""
+    else:
+        pass
+    command = input()
